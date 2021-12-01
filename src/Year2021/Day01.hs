@@ -2,6 +2,7 @@ module Year2021.Day01 where
 
 import Aoc.Parsers (Parser, integer)
 import Aoc.Puzzle (Puzzle (Puzzle), mkPuzzle)
+import Aoc.Util (countMatches)
 import Data.List (tails)
 import Text.Megaparsec (sepBy)
 import Text.Megaparsec.Char (newline)
@@ -19,7 +20,7 @@ solvePart2 :: [Int] -> Int
 solvePart2 = solvePart1 . slideWindows 3
 
 countIncreases :: [Int] -> Int
-countIncreases = length . filter (> 0) . (zipWith (-) <$> tail <*> id)
+countIncreases = countMatches (< 0) . (zipWith (-) <*> tail)
 
 slideWindows :: Int -> [Int] -> [Int]
 slideWindows windowSize = foldr1 (zipWith (+)) . take windowSize . tails
