@@ -22,7 +22,7 @@ countIncreases :: [Int] -> Int
 countIncreases = length . filter (> 0) . (zipWith (-) <$> tail <*> id)
 
 slideWindows :: Int -> [Int] -> [Int]
-slideWindows windowSize = foldr (zipWith (+)) (repeat 0) . take windowSize . iterate tail
+slideWindows windowSize = foldr1 (zipWith (+)) . take windowSize . iterate tail
 
 numbers :: Parser [Int]
 numbers = integer `sepBy` newline
