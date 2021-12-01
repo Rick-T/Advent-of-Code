@@ -3,7 +3,18 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/lock_files
 
-packages: []
+packages:
+- completed:
+    name: general-search
+    version: 0.1.0.0
+    git: https://github.com/Rick-T/general-search.git
+    pantry-tree:
+      size: 4232
+      sha256: 72fce1fef29fb0e28334a398094a789d68dc5076ae4664128a9b28f7a0095675
+    commit: 98760dcebd7dae3fcf657f6a5f2e7bb3235c6d45
+  original:
+    git: https://github.com/Rick-T/general-search.git
+    commit: 98760dcebd7dae3fcf657f6a5f2e7bb3235c6d45
 snapshots:
 - completed:
     size: 586296

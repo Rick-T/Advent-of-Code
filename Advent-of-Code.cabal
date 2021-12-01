@@ -69,6 +69,7 @@ library
     , containers
     , directory
     , filepath
+    , general-search
     , hashable
     , megaparsec
     , mtl
@@ -98,6 +99,7 @@ executable Advent-of-Code-exe
     , containers
     , directory
     , filepath
+    , general-search
     , hashable
     , megaparsec
     , mtl
@@ -127,6 +129,7 @@ test-suite Advent-of-Code-test
     , containers
     , directory
     , filepath
+    , general-search
     , hashable
     , megaparsec
     , mtl
