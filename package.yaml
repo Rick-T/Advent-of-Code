@@ -1,0 +1,64 @@
+name: Advent-of-Code
+version: 0.1.0.0
+github: "Rick-T/Advent-of-Code"
+license: BSD3
+author: "Patrick Teubner"
+maintainer: "example@example.com"
+copyright: "2021 Patrick Teubner"
+
+extra-source-files:
+  - README.md
+  - ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description: Please see the README on GitHub at <https://github.com/Rick-T/Advent-of-Code#readme>
+
+dependencies:
+  - base >= 4.7 && < 5
+  - bytestring
+  - containers
+  - directory
+  - filepath
+  - hashable
+  - megaparsec
+  - mtl
+  - parser-combinators
+  - req
+  - semirings
+  - template-haskell
+  - text
+  - timeit
+  - transformers
+  - unordered-containers
+  - vector
+
+library:
+  source-dirs: src
+
+executables:
+  Advent-of-Code-exe:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - Advent-of-Code
+
+tests:
+  Advent-of-Code-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - Advent-of-Code
