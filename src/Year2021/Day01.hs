@@ -5,6 +5,7 @@ import Text.Megaparsec (many, sepBy, sepEndBy, anySingle)
 import Text.Megaparsec.Char (newline)
 import Data.Text (Text)
 import Aoc.Puzzle (Puzzle, mkPuzzle)
+import Data.List (tails)
 
 part1 :: Puzzle [Int] Int
 part1 = mkPuzzle numbers solvePart1
@@ -22,7 +23,7 @@ countIncreases :: [Int] -> Int
 countIncreases = length . filter (> 0) . (zipWith (-) <$> tail <*> id)
 
 slideWindows :: Int -> [Int] -> [Int]
-slideWindows windowSize = foldr1 (zipWith (+)) . take windowSize . iterate tail
+slideWindows windowSize = foldr1 (zipWith (+)) . take windowSize . tails
 
 numbers :: Parser [Int]
 numbers = integer `sepBy` newline
