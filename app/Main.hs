@@ -2,8 +2,11 @@
 
 module Main where
 
+import Aoc.Puzzle (Puzzle, runPuzzle)
+import Main.Template (mkRun)
+import System.Environment (getArgs)
+import System.TimeIt (timeItNamed)
 import Text.Printf (printf)
-import Control.Monad (forM_)
 import qualified Year2020.Day01
 import qualified Year2020.Day02
 import qualified Year2020.Day03
@@ -30,16 +33,12 @@ import qualified Year2020.Day23
 import qualified Year2020.Day24
 import qualified Year2020.Day25
 import qualified Year2021.Day01
-import System.Environment (getArgs)
-import System.TimeIt (timeItNamed)
-import Aoc.Puzzle (Puzzle(Puzzle), runPuzzle)
-import Aoc.Input (parsePuzzleInput)
-import Main.Template (mkRun)
 
-$(mkRun [
-  (2020, [1..25]),
-  (2021, [1])
-  ])
+$( mkRun
+     [ (2020, [1 .. 25]),
+       (2021, [1])
+     ]
+ )
 
 main :: IO ()
 main = do
