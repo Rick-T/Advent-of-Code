@@ -43,6 +43,11 @@ instance Show a => Show (V2 a) where
 
 infixl 7 .*
 
+(*.) :: Num a => V2 a -> a -> V2 a
+(*.) = flip (.*)
+
+infixr 7 *.
+
 mapX :: (a -> a) -> V2 a -> V2 a
 mapX f (V2 x y) = V2 (f x) y
 
