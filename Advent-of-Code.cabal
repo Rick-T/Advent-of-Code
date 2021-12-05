@@ -62,6 +62,7 @@ library
       Year2021.Day02
       Year2021.Day03
       Year2021.Day04
+      Year2021.Day05
   other-modules:
       Paths_Advent_of_Code
   hs-source-dirs:
