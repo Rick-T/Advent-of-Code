@@ -1,16 +1,16 @@
 module Year2020.Day11 where
 
-import Aoc.Grid (Grid, fromStringWith, imapP, withBorder, (!), mapP)
+import Aoc.Grid (Grid, fromStringWith, imapP, mapP, withBorder, (!))
+import Aoc.Input (parsePuzzleInput)
+import Aoc.Parsers (Parser, asciiGrid)
+import Aoc.Puzzle (Puzzle, mkPuzzle)
 import Aoc.Util (countMatches, fixpoint, hasAtLeast)
 import Aoc.Vector (V2 (V2))
-import Data.Maybe (catMaybes)
-import Aoc.Input (parsePuzzleInput)
-import Aoc.Parsers (asciiGrid, Parser)
-import Data.Char (isSeparator)
-import Text.Megaparsec.Char (char)
 import Control.Applicative ((<|>))
+import Data.Char (isSeparator)
 import Data.Functor (($>))
-import Aoc.Puzzle (Puzzle, mkPuzzle)
+import Data.Maybe (catMaybes)
+import Text.Megaparsec.Char (char)
 
 type Map = Grid Tile
 
@@ -73,11 +73,11 @@ directions :: [Position]
 directions = [V2 dx dy | dx <- [-1 .. 1], dy <- [-1 .. 1], dy /= 0 || dx /= 0]
 
 grid :: Parser Map
-grid = asciiGrid parseTile
+grid = withBorder Border <$> asciiGrid parseTile
 
 parseTile :: Parser Tile
-parseTile = 
+parseTile =
   char '#' $> Person
-  <|> char 'L' $> Seat
-  <|> char '.' $> Floor
-  <|> fail "Invalid tile"
+    <|> char 'L' $> Seat
+    <|> char '.' $> Floor
+    <|> fail "Invalid tile"
