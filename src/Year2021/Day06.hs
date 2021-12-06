@@ -22,7 +22,7 @@ nextDay = M.foldrWithKey updateMap M.empty
 
 updateMap :: Int -> Int -> HashMap Int Int -> HashMap Int Int
 updateMap 0 v = M.insertWith (+) 6 v . M.insert 8 v
-updateMap i v = M.insert (i -1) v
+updateMap i v = M.insert (i - 1) v
 
 input :: Parser (HashMap Int Int)
 input = counter <$> integer `sepBy` char ','

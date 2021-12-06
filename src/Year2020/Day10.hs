@@ -1,17 +1,17 @@
 module Year2020.Day10 where
 
-import Data.List (sort)
-import Aoc.Parsers (Parser, integer)
-import Text.Megaparsec.Char (newline)
-import Control.Applicative.Combinators ( sepBy )
 import Aoc.Input (parsePuzzleInput)
+import Aoc.Parsers (Parser, integer)
 import Aoc.Puzzle (Puzzle, mkPuzzle)
+import Control.Applicative.Combinators (sepBy)
+import Data.List (sort)
+import Text.Megaparsec.Char (newline)
 
 part1 :: Puzzle [Int] Int
 part1 = mkPuzzle inputP solvePart1
 
 part2 :: Puzzle [Int] Int
-part2 = mkPuzzle  inputP solvePart2
+part2 = mkPuzzle inputP solvePart2
 
 inputP :: Parser [Int]
 inputP = integer `sepBy` newline
@@ -33,7 +33,7 @@ solvePart2 ls = go (1 : repeat 0) (sort ls) 0
     go [] [] _ = 0
     go as [] _ = head as
     go as (l : ls) i =
-      let diff = (l - i -1)
+      let diff = (l - i - 1)
           s = sum $ take (3 - diff) as
           as' = foldr (:) as (s : replicate diff 0)
        in go as' ls l

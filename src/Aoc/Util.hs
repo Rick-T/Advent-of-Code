@@ -17,7 +17,7 @@ hasAtLeast target condition
   where
     go 0 _ = True
     go _ [] = False
-    go i (l : ls) = if condition l then go (i -1) ls else go i ls
+    go i (l : ls) = if condition l then go (i - 1) ls else go i ls
 
 hasAtMost :: Foldable f => Int -> (a -> Bool) -> f a -> Bool
 hasAtMost target condition
@@ -26,7 +26,7 @@ hasAtMost target condition
   where
     go 0 _ = False
     go _ [] = True
-    go i (l : ls) = if condition l then go (i -1) ls else go i ls
+    go i (l : ls) = if condition l then go (i - 1) ls else go i ls
 
 hasExactly :: Foldable f => Int -> (a -> Bool) -> f a -> Bool
 hasExactly target condition = (== target) . countMatches condition
