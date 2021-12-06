@@ -4,6 +4,7 @@ module Year2021.Day05 where
 
 import Aoc.Parsers (Parser, integer)
 import Aoc.Puzzle (Puzzle (Puzzle), mkPuzzle, runPuzzle)
+import Aoc.Util (counter)
 import Aoc.Vector (V2 (V2), maxNorm, (.*))
 import Control.Monad.Combinators (sepBy)
 import Data.HashMap.Strict (HashMap)
@@ -27,7 +28,7 @@ solve :: [LineDef] -> Int
 solve = M.size . M.filter (> 1) . buildMap
 
 buildMap :: [LineDef] -> HashMap Point Int
-buildMap = foldr (uncurry (M.insertWith (+))) M.empty . (`zip` repeat 1) . concatMap toLine
+buildMap = counter . concatMap toLine
 
 toLine :: LineDef -> [Point]
 toLine (LineDef x y) =

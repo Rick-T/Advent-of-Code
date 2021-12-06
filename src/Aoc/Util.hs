@@ -2,6 +2,9 @@ module Aoc.Util where
 
 import Data.Char (digitToInt, intToDigit)
 import Data.Foldable (foldl', toList)
+import Data.HashMap.Strict (HashMap)
+import qualified Data.HashMap.Strict as M
+import Data.Hashable (Hashable)
 import Numeric (showIntAtBase)
 
 countMatches :: Foldable f => (a -> Bool) -> f a -> Int
@@ -27,6 +30,9 @@ hasAtMost target condition
 
 hasExactly :: Foldable f => Int -> (a -> Bool) -> f a -> Bool
 hasExactly target condition = (== target) . countMatches condition
+
+counter :: (Eq a, Hashable a, Num b) => [a] -> HashMap a b
+counter = M.fromListWith (+) . (`zip` repeat 1)
 
 fixpoint :: Eq x => (x -> x) -> x -> x
 fixpoint f = firstEqual . iterate f
