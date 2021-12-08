@@ -39,10 +39,11 @@ import qualified Year2021.Day04
 import qualified Year2021.Day05
 import qualified Year2021.Day06
 import qualified Year2021.Day07
+import qualified Year2021.Day08
 
 $( mkRun
      [ (2020, [1 .. 25]),
-       (2021, [1 .. 7])
+       (2021, [1 .. 8])
      ]
  )
 
