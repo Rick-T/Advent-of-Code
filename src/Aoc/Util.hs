@@ -48,6 +48,15 @@ iterateN i f = (!! i) . iterate f
 uncurry3 :: (a -> b -> c -> d) -> (a, b, c) -> d
 uncurry3 f (a, b, c) = f a b c
 
+fst3 :: (a, b, c) -> a
+fst3 (x, _, _) = x
+
+snd3 :: (a, b, c) -> b
+snd3 (_, y, _) = y
+
+thrd3 :: (a, b, c) -> c
+thrd3 (_, _, z) = z
+
 minMax :: (Foldable t, Ord a, Bounded a) => t a -> (a, a)
 minMax = foldr (\a (x, y) -> (min x a, max y a)) (maxBound, minBound)
 

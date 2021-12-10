@@ -8,9 +8,11 @@ module Aoc.Vector where
 import Aoc.Grid (GridIndex (..))
 import Control.Applicative (Applicative (liftA2))
 import Data.Hashable (Hashable)
+import Data.Set (Set)
+import qualified Data.Set as S
 import GHC.Generics (Generic)
 
-data V2 a = V2 {_x, _y :: a} deriving (Functor, Foldable, Traversable, Eq, Generic, Hashable)
+data V2 a = V2 {_x, _y :: a} deriving (Functor, Foldable, Traversable, Eq, Generic, Hashable, Ord)
 
 instance Num a => Num (V2 a) where
   (+) = liftA2 (+)
