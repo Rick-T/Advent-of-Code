@@ -137,5 +137,17 @@ north = V2 0 1
 west :: Num a => V2 a
 west = V2 (-1) 0
 
+southEast :: Num a => V2 a
+southEast = south + east
+
+southWest :: Num a => V2 a
+southWest = south + west
+
+northEast :: Num a => V2 a
+northEast = north + east
+
+northWest :: Num a => V2 a
+northWest = north + west
+
 origin :: Num a => V2 a
 origin = 0

@@ -60,6 +60,9 @@ thrd3 (_, _, z) = z
 minMax :: (Foldable t, Ord a, Bounded a) => t a -> (a, a)
 minMax = foldr (\a (x, y) -> (min x a, max y a)) (maxBound, minBound)
 
+median :: [a] -> a
+median xs = xs !! (length xs `div` 2)
+
 fromBinary :: String -> Int
 fromBinary = foldl' (\a b -> 2 * a + b) 0 . fmap digitToInt
 
