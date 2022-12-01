@@ -92,7 +92,6 @@ library
     , filepath
     , general-search
     , hashable
-    , implicit
     , megaparsec
     , mtl
     , parser-combinators
@@ -123,7 +122,6 @@ executable Advent-of-Code-exe
     , filepath
     , general-search
     , hashable
-    , implicit
     , megaparsec
     , mtl
     , parser-combinators
@@ -154,7 +152,6 @@ test-suite Advent-of-Code-test
     , filepath
     , general-search
     , hashable
-    , implicit
     , megaparsec
     , mtl
     , parser-combinators

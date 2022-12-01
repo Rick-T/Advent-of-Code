@@ -23,7 +23,7 @@ mkRunClause year day =
     [ LitP $ IntegerL year,
       LitP $ IntegerL day
     ]
-    (NormalB $ DoE $ NoBindS . runPartExpression year day <$> [1, 2])
+    (NormalB $ DoE Nothing $ NoBindS . runPartExpression year day <$> [1, 2])
     []
 
 runPartExpression :: Integer -> Integer -> Integer -> Exp

@@ -61,9 +61,6 @@ data Room = Room
 
 type Rooms = IntMap Room
 
-instance Hashable a => Hashable (IntMap a) where
-  hashWithSalt x im = hashWithSalt x $ IM.toList im
-
 part1 = mkPuzzle input solvePart1
 
 part2 = mkPuzzle input solvePart2

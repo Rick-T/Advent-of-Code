@@ -27,7 +27,6 @@ dependencies:
   - filepath
   - general-search
   - hashable
-  - implicit
   - megaparsec
   - mtl
   - parser-combinators

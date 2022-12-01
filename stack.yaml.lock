@@ -3,28 +3,28 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/lock_files
 
-snapshots:
-- original: lts-18.18
-  completed:
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/18/18.yaml
-    sha256: 63539429076b7ebbab6daa7656cfb079393bf644971156dc349d7c0453694ac2
-    size: 586296
 packages:
-- original:
-    git: https://github.com/Rick-T/general-search.git
+- completed:
     commit: 98760dcebd7dae3fcf657f6a5f2e7bb3235c6d45
-  completed:
+    git: https://github.com/Rick-T/general-search.git
+    name: general-search
     pantry-tree:
       sha256: 72fce1fef29fb0e28334a398094a789d68dc5076ae4664128a9b28f7a0095675
       size: 4232
-    git: https://github.com/Rick-T/general-search.git
     version: 0.1.0.0
-    name: general-search
+  original:
     commit: 98760dcebd7dae3fcf657f6a5f2e7bb3235c6d45
-- original:
+    git: https://github.com/Rick-T/general-search.git
+- completed:
     hackage: implicit-0.3.0.1@sha256:6483788b310be6531385d05d9064b7992752dec4c1dee7016df27bde3b1f11cb,10881
-  completed:
     pantry-tree:
       sha256: 096b83316dac4d5d0d79c6ec02821d9a824048cc657642132f8dba13349d50ab
       size: 4927
+  original:
     hackage: implicit-0.3.0.1@sha256:6483788b310be6531385d05d9064b7992752dec4c1dee7016df27bde3b1f11cb,10881
+snapshots:
+- completed:
+    sha256: be747117bed6d462806c883352c3206325b23480825103f5c87884e97e52819a
+    size: 619173
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/19/20.yaml
+  original: lts-19.20
