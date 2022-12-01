@@ -42,7 +42,7 @@ packages:
 extra-deps:
   - git: https://github.com/Rick-T/general-search.git
     commit: 98760dcebd7dae3fcf657f6a5f2e7bb3235c6d45
-
+  - implicit-0.3.0.1@sha256:6483788b310be6531385d05d9064b7992752dec4c1dee7016df27bde3b1f11cb,10881
 # Override default flag values for local packages and extra-deps
 # flags: {}
 

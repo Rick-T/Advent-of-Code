@@ -1,6 +1,6 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.34.4.
+-- This file has been generated from package.yaml by hpack version 0.35.0.
 --
 -- see: https://github.com/sol/hpack
 
@@ -69,6 +69,17 @@ library
       Year2021.Day09
       Year2021.Day10
       Year2021.Day11
+      Year2021.Day12
+      Year2021.Day13
+      Year2021.Day18
+      Year2021.Day19
+      Year2021.Day20
+      Year2021.Day21
+      Year2021.Day22
+      Year2021.Day23
+      Year2021.Day24
+      Year2021.Day25
+      Year2022.Day01
   other-modules:
       Paths_Advent_of_Code
   hs-source-dirs:
@@ -81,6 +92,7 @@ library
     , filepath
     , general-search
     , hashable
+    , implicit
     , megaparsec
     , mtl
     , parser-combinators
@@ -111,6 +123,7 @@ executable Advent-of-Code-exe
     , filepath
     , general-search
     , hashable
+    , implicit
     , megaparsec
     , mtl
     , parser-combinators
@@ -141,6 +154,7 @@ test-suite Advent-of-Code-test
     , filepath
     , general-search
     , hashable
+    , implicit
     , megaparsec
     , mtl
     , parser-combinators
